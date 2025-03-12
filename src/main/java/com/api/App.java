@@ -3,7 +3,7 @@ package com.api;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -13,7 +13,7 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Map<String, Pokemon> pokemonMap;
-        List<Pokemon> userPokemons = new ArrayList<>();
+        List<Pokemon> userPokemons = new LinkedList<>();
         
         System.out.print("""
             Implementación:
@@ -30,11 +30,11 @@ public class App {
         String subMenu = "";
         while (!subMenu.equals("6")) {
             System.out.print("""
-            (1) Agregar un Pokémon a mi colección
-            (2) Mostrar datos de un Pokémon
-            (3) Mostrar mi colección ordenada por tipo primario
-            (4) Mostrar todos los Pokémon ordenados por tipo primario
-            (5) Buscar Pokémon por habilidad
+            (1) Agregar un pokemon a mi equipo
+            (2) Mostrar datos de un pokemon
+            (3) Mostrar mi equipo ordenado por tipo
+            (4) Mostrar todos los Pokemon ordenados por tipo
+            (5) Buscar Pokemon por habilidad
             (6) Salir
             >>> """);
             
@@ -196,7 +196,7 @@ public class App {
      * @param pokemonMap map de pokemons
      */
     private static void mostrarPokemonsTipo(Map<String, Pokemon> pokemonMap) {
-        List<Pokemon> todos = new ArrayList<>(pokemonMap.values());
+        List<Pokemon> todos = new LinkedList<>(pokemonMap.values());
         
         todos.sort(
             Comparator
@@ -222,7 +222,7 @@ public class App {
     private static void buscarPokemonHabilidad(Scanner sc, Map<String, Pokemon> pokemonMap) {
         System.out.print("Ingrese la habilidad a buscar: ");
         String ability = sc.nextLine().toLowerCase();
-        List<Pokemon> coincidencias = new ArrayList<>();
+        List<Pokemon> coincidencias = new LinkedList<>();
         
         for (Pokemon pokemon : pokemonMap.values()) {
             if (pokemon.getAbilities().toLowerCase().contains(ability)) {
