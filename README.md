@@ -68,7 +68,7 @@ Para el ordenamiento de todos los Pokémon por su tipo, decidí usar el método 
 
 Con esto en mente, y con los tiempos registrados por el profiler al ordenar cierta cantidad de pokemons, se pudo graficar los puntos y compararlos con la línea de tendencia esperada.
 
-
+![image](https://github.com/user-attachments/assets/bdab3049-2d44-4173-a7d1-220d64659f73)
 
 Como se muestra en la figura, la mayoría de los tiempos analizados coinciden con los esperados por la línea de tendencia.
 
