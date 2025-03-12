@@ -72,6 +72,7 @@ public class App {
         String csvFile = "pokemon_data_pokeapi.csv";
         String line;
         String csvSplitBy = ",";
+        int pokemonsCargados = 0;
         
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
             // headers
@@ -114,10 +115,12 @@ public class App {
                 );
                 pokemonMap.put(name, pokemon);
             }
-            
+            pokemonsCargados++;
         } catch (IOException e) {
             System.out.println("ERROR: " + e.getMessage());
         }
+
+        System.out.println("Pokemon cargados " + pokemonsCargados);
     }
     
     /**
